@@ -60,7 +60,7 @@ abstract class NexusCommand @JvmOverloads constructor(
                 && args.isNotEmpty()) {
             val command = args[0].toLowerCase()
             val subCommand = subCommands.firstOrNull { it.name == command || it.aliases.contains(command) }
-            subCommand?.execute(sender, commandLabel, if(args.size == 1) emptyArray() else args.copyOfRange(1, args.size-1))?:
+            subCommand?.execute(sender, commandLabel, if(args.size == 1) emptyArray() else args.copyOfRange(1, args.size))?:
                     context.reply(locale.noSubCommand)
             return true
         }

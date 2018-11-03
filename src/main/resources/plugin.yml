@@ -1,5 +1,5 @@
 name: Nexus
-version: 0.2.2
+version: 0.2.3
 main: de.arraying.nexus.NexusPlugin
 description: A core framework.
 softdepend: [Vault]
