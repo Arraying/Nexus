@@ -68,6 +68,9 @@ abstract class Nexus: JavaPlugin() {
             val commandMap = field.get(Bukkit.getServer()) as CommandMap
             configuration.commands.forEach {
                 it.locale = configuration.locale
+                it.subCommands.forEach {
+                    sub -> sub.locale = configuration.locale
+                }
             }
             commandMap.registerAll(name, configuration.commands as List<Command>?)
         } catch(nsfe: NoSuchFieldException) {

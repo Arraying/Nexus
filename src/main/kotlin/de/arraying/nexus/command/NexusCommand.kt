@@ -24,7 +24,7 @@ abstract class NexusCommand @JvmOverloads constructor(
         name: String,
         private val perm: String,
         private val target: Target = Target.BOTH,
-        private val subCommands: List<NexusCommand> = listOf(),
+        val subCommands: List<NexusCommand> = listOf(),
         vararg aliases: String
 ): Command(name, "", "", listOf(*aliases)) {
 
