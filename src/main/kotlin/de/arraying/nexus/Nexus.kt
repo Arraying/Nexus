@@ -112,10 +112,10 @@ abstract class Nexus: JavaPlugin() {
      * Disables the plugin.
      */
     override fun onDisable() {
+        onShutdown()
         try {
             sql.pool.shutdown()
         } catch(ignored: UninitializedPropertyAccessException) {}
-        onShutdown()
         super.onDisable()
     }
 
